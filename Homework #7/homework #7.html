@@ -1,0 +1,199 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>DOM</title>
+
+
+  <!--CSS -->
+
+<style id="jsbin-css">
+html, body{
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+	font-family: Arial;
+}
+
+body{
+	background-color: darkorange;
+	background-size: cover;
+	background-position: center bottom;
+}
+
+
+#wrapper{
+	background: #fff;
+	min-height: 30em;
+	width: 50rem;
+	margin: auto;
+	box-shadow: 0 0 10px #999;
+}
+
+header{
+	height: 10rem;
+	color: white;
+	font-size: 2em;
+	text-shadow: 2px 2px #777;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: .5rem;
+	margin-bottom: 1rem;
+	background-color: aquamarine;
+	background-size: cover;
+	background-position: top bottom;
+	border-bottom: .25em solid khaki;
+}
+
+section{
+	padding: 1rem;
+	background-color: linen;
+}
+
+footer{
+	background-color: darkviolet ;
+	padding: 1rem;
+}
+
+h1{
+	border-bottom: 3px solid #eee;;
+}
+
+h2{
+	font-style: italic;
+	font-size: 1.3rem;
+	padding: 0;
+	margin: 0;
+}
+</style>
+<!--END OF CSS -->
+
+</head>
+<body>
+
+	
+
+<!--HTML CODE-->
+
+	<div id="wrapper">
+		<header>
+			<div class="brand"></div>
+		</header>
+		<section id="js"></section>
+		<footer class='footer'>
+			
+		</footer>
+	</div>
+
+<!--END OF HTML CODE-->
+
+
+
+
+<!--ES6 BEGINING-->
+
+
+
+<script id="jsbin-javascript">
+
+
+const webSite = {
+	page: "ES6 Homework: The DOM",
+	description: "Homework Assignment #7",
+	brand: 'VINEZTECH',
+	copyright: "Copyright (c) 2020 by Ezebuiro Uchechukwu vincent"
+};
+
+const brand = document.querySelector(".brand");
+brand.innerText = webSite.brand;
+const slogan = brand.parentNode.appendChild(document.createElement('span'));
+slogan.innerText = 'Technology to the world ...';
+
+function addTagElement(node, tag, content=''){
+	node.appendChild(document.createElement(tag)).innerText=content;
+}
+
+function css(node, cssStyle){
+	for (key in cssStyle){
+		node.style[key] = cssStyle[key];
+	}
+}
+
+const sloganStyle = {color:'yellow', fontSize: '60px', fontFamily: 'Palatino, serif', fontStyle: 'italic'};
+css(slogan, sloganStyle);
+
+
+const sectionJs = document.getElementById('js');
+const footer = document.querySelector('.footer');
+addTagElement(sectionJs, 'h1', webSite.page);
+addTagElement(sectionJs, 'h2', webSite.description);
+addTagElement(footer, 'p', webSite.copyright);
+css(footer, {fontWeight: 'bold', textAlign: 'right'})
+
+function hex(){
+	const rgb = [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'];
+	let hex='';
+	for(let i = 0; i < 6; i++){
+		hex += rgb[Math.floor(Math.random() * rgb.length)];
+	}
+	return "#"+hex;
+}
+
+const rectangleWrapper = sectionJs.appendChild(document.createElement('div'));
+rectangleWrapper.id = 'rectangleWrapper';
+let ids = [];
+
+for(let i = 0; i<10; i++){
+	const div = rectangleWrapper.appendChild(document.createElement('div'));
+	const color = hex();
+	let id = `dd${i+1}`;
+	ids.push(id);
+	div.id=id;
+	div.className = 'divClass';
+	let width = Math.floor(Math.random() * 10) + 113;
+	let height = Math.floor(Math.random() * 90) + 200;
+	div.innerHTML = 'w: '+width+'<br>h: '+height+'<br>hex '+color;
+
+	css(div, {width: `${width}px`, height: `${height}px`, backgroundColor: color, display: 'inline-block', marginRight: '4px', marginTop: '50px', fontSize: '15px', padding: '2px', fontWeight: 'bold', color: 'yellow'});
+}
+
+css(rectangleWrapper, {padding: '50px 50px 0 50px'});
+console.log('Here are the rectangle IDs: '+ ids.join(','));
+
+const title = document.querySelector("head title");
+title.innerText = document.querySelector("h1").innerText;
+</script>
+
+
+
+
+<!--ES6 ENDING-->
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!--EZEBUIRO UCHECHUKWU VINCENT-->
+
+
+
+
+
+
+
+ 

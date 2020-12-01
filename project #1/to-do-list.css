@@ -1,0 +1,145 @@
+
+
+
+
+
+/*<editor-fold desc="Main">*/
+
+.container {
+    margin-top: 100px;
+}
+
+
+
+/*</editor-fold>*/
+
+
+
+/*<editor-fold desc="Login">*/
+
+#welcome {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: darkorange;
+    border: 1px solid #666;
+    text-align: center;
+    font-family: "Rockwell";
+}
+
+#errorMsg {
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    color: red;
+}
+
+#welcome input[type="button"] {
+    width: 80px;
+    padding:5px 15px;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#welcome form {
+    margin: 20px;
+    text-align: left;
+}
+
+#welcome form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+
+#welcome form input[type=checkbox] {
+    display: block;
+    width: auto;
+    float: left;
+}
+
+#welcome form input[type=submit], button {
+    width: auto;
+    padding:5px 15px;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#welcome form div {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+#welcome form br {
+    clear: left;
+}
+
+
+
+/*</editor-fold>*/
+
+
+
+/*<editor-fold desc="Dashboard">*/
+
+#dashboard {
+    margin: 100px auto;
+    padding: 10px 20px;
+    width: 80%;
+    min-height: 400px;
+    background-color: tomato;
+    font-family: Verdana Arial;
+}
+
+#dashboardHeader, #loggedUser {
+    overflow: hidden;
+}
+
+#title {
+    float: left;
+}
+
+#loggedUser {
+    float: right;
+}
+
+#welcomeMsg {
+    float: left;
+    margin-right: 30px;
+}
+
+#loggedUser button {
+    float: right;
+}
+
+
+/*</editor-fold>*/
+
+
+.list {
+    font-family: Arial;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.list ul {
+    list-style-type: none;
+}
+
+.list h2 {
+    font-size: 16px;
+    font-style: italic;
+}
+
+.list  input[type=checkbox] {
+    display: block;
+    width: auto;
+    float: left;
+    margin-right: 15px;
+}
+
+
+/*EZEBUIRO UCHECHUKWU VINCENT */

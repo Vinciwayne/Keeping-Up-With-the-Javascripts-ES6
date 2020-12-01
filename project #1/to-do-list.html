@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-do exercise list</title>
+    <link rel="stylesheet" href="to-do-list.css">
+</head>
+<body>
+    <div class="container">
+        <div id="initial" style="display: none">
+            <div id="errorMsg"></div>
+            <div id="welcome">
+                <h1>To-do list</h1>
+                <p>Make your choice.</p>
+                <input type="button" value="Sign Up" onclick="showSignUp()">
+                <input type="button" value="Log In" onclick="showLogIn()">
+
+                <form id="signUpForm" name="signUpForm" onsubmit="return validateSignInForm(this)" style="display: none">
+                    <label>First name:</label><input type="text" name="firstName">
+                    <label>Last name:</label><input type="text" name="lastName">
+                    <label>Email:</label><input type="text" name="email" >
+                    <label>Password:</label><input type="password" name="password">
+                    <input type="checkbox" value="I agree to the Terms of Use" name="termsOfUse"><div>I agree to the Terms of Use</div><br>
+                    <input type="submit" value="Submit">
+                </form>
+
+                <form id="logInForm" name="logInForm" onsubmit="return validateLogInForm(this);" style="display: none">
+                    <label>Email:</label><input type="text" name="email">
+                    <label>Password:</label><input type="password" name="password">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+
+        <div id="dashboard" style="display: none">
+            <div id="dashboardHeader">
+                <div id="title">
+                    <h1>Dashboard</h1>
+                </div>
+                <div id="loggedUser">
+                    <div id="welcomeMsg">Welcome <span id="userName"></span>!</div>
+                    <button onclick="logOut()">Log out</button>
+                </div>
+            </div>
+
+            <form id="toDoForm" onsubmit="return createNewList(this)">
+                <input type="text" name="listName">
+                <input type="submit" value="New To-do-List">
+            </form>
+
+            <div id="toDoLists">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="to-do-list.js">
+    </script>
+</body>
+</html>
+
+
+
+
+<!--EZEBUIRO UCHECHUKWU VINCENT-->

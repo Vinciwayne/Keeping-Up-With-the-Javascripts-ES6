@@ -1,0 +1,96 @@
+
+     div, img { display: block }
+
+     div { font: normal 28pt Times }
+     
+     h1, h2, h3, h4 {
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width: 1500px
+     }
+     
+     h1 {
+         color: #3c6991;
+         font: bold 62pt Tahoma;
+         margin-bottom: 40px
+     }
+       
+     h2 {
+         color: #5681a7;
+         font: bold 50pt Tahoma;
+         margin-bottom: 60px
+     }
+       
+     h3 {
+         color: #68b4ee;
+         font: bold 28pt Tahoma
+     }
+       
+     h4 {
+         color: yellow;
+         font: bold 20pt Tahoma
+     }
+     
+     p { margin: 0px 0px 40px 0px }
+       
+     ul > li {
+         color: #444;
+         font: normal 28pt Times;
+         list-style-type: disc;
+         margin-bottom: 20px
+     }
+     
+     
+         /** Classes: */
+     
+     .code {
+         border-radius: 5px;
+         display: inline;
+         background-color: #999;
+         font: bold 28pt Courier;
+         padding: 0px 10px 0px 10px;
+     }
+     
+     div, p, .slide {
+         width: 1100px
+     }
+     
+     
+         /** IDs: */
+     
+     #b_logo { width: 1000px }
+     
+     #node_logo {
+         position: relative;
+         float: right;
+         width: 150px;
+         top: -250px
+     }
+     
+     #npm_logo {
+         position: relative;
+         float: right;
+         width: 150px;
+         right: -150px;
+         top: -150px
+     }
+     
+     #grunt_logo {
+         position: relative;
+         float: left;
+         top: 50px;
+         height: 150px
+     }
+     
+     #gulp_logo {
+         border-radius: 0;
+         position: relative;
+         float: left;
+         top: 50px;
+         height: 150px
+     }
+       
+
+
+     /*EZEBUIRO UCHECHUKWU VINCENT */

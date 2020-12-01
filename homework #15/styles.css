@@ -1,0 +1,36 @@
+button { font: normal 9pt Tahoma; 
+background-color: skyblue;}
+
+div {
+  font: normal 10pt Tahoma;
+  text-align: justify;
+}
+
+li {
+  position: relative;
+  top: -20px;
+}
+
+ul > li > ul > li {
+  position: relative;
+  left: -20px;
+  top: 0px;
+}
+
+.first {
+  list-style-type: none;
+  position: relative;
+  left: -20px;
+  top: -20px;
+}
+.images li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 30px;
+}
+
+#fetchButton2 { color: #C00; }
+
+
+
+/*EZEBUIRO UCHECHUKWU VINCENT */

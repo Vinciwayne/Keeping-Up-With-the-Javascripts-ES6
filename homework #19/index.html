@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Home assignment #19 </title>
+    
+    <meta name="description" content="presentation about 
+        Browserify in impress.js" />
+    <meta name="author" content="EZEBUIRO UCHECHUKWU VINCENT" />
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="assets/impress-demo.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+<body class="impress-not-supported">
+
+<div id="impress" data-autoplay="10">
+
+    <div id="quick-intro" 
+         class="step" data-x="-1000" data-y="-1000" data-scale="4">
+        <h1 class="head1"> about Browserify</h1>
+        <img id="b_logo" src="assets/imgs/Browserify-logo.png" />
+        <br /><br />
+        <h3>EZEBUIRO UCHECHUKWU VINCENT</h3>
+        <h4>30 09 2020</h4>
+    </div>
+      
+    <div id="about-browserify" 
+         class="step" data-x="500" data-y="1500" 
+         data-rotate-x="90" data-rotate-y="0" data-scale="3">
+        <h2>OK... What?</h2>
+        
+        <ul>
+            <li>Is a build tool for JavaScript.</li>
+            <li>Allows using Node.js NPM packages on client side in a browser.</li>
+            <li>Automizes work</li>
+            <li>Browserify is perhaps the simplest bundler because it uses NodeJS require 
+                syntax to import javascript.</li> 
+                <li>It does not deal with any other assets other than pure 
+                javascript modules.</li>
+            
+        </ul>
+    </div>
+
+    <div id="prerequisites" 
+         class="step" data-x="-2000" data-y="2500" 
+         data-rotate="270" data-scale="2">
+        <h2>Prerequisites</h2>
+        
+        <ul>
+            <li>Node.js</li>
+            <li>NPM</li>
+            <li>Browserify</li>
+            <li>JavaScript modules you will use for development</li>
+        </ul>
+      
+        <div>
+            <img id="node_logo" src="assets/imgs/nodejs-logo.png" />
+            <img id="npm_logo" src="assets/imgs/npm-logo.png" />
+        </div>
+    </div>
+
+    <div id="getting-started" 
+         class="step" data-x="-1000" data-y="2500" 
+         data-rotate-x="-270" data-rotate-y="-90" data-scale="1">
+        <h2>Getting started</h2>
+        
+        <p>
+            First you need to install Node.js and npm. For example 
+            via homepage download or Homebrew.
+        </p>
+        <p>
+            Then install <strong>Browserify</strong> via 
+            <strong>npm</strong> globally.<br />
+            <span class="code">npm install -g browserify</span>
+        </p>
+    </div>
+
+    <div id="import-export" 
+         class="step" data-x="5500" data-y="500"
+         data-z="-2000" data-rotate-x="90" data-rotate-y="0" 
+         data-scale="3">
+        <h2>Import and Export</h2>
+        
+        <p>
+            All installed npm packages are saved to 
+            <span class="code">node_modules</span> directory and can be 
+            imported with standard ES6 syntax.
+            <span class="code">const module = require('module_name');</span>
+        </p>
+        <p>
+            Our custom code can be exported as a ES6 module.
+        </p>
+            <span class="code">module.exports = { functionName };</span>
+        
+    </div>
+
+    <div id="run-browserify" 
+         class="step" data-x="4500" data-y="-2000" 
+         data-rotate="90" data-scale="2">
+        <h2>Running Browserify</h2>
+        
+        <p>
+            When we run Browserify, it’ll want to build a new JavaScript 
+            file with all of our attached modules (npm modules included). 
+            Running this command from project root would look like:
+        </p>
+        <div>
+            <span class="code">
+                browserify js/input.js -o js/output.js -d</span>
+        </div>
+
+    </div>
+
+    <div id="exported-files" 
+         class="step" data-x="7000" data-y="-2000" 
+         data-rotate="-135" data-scale="3">
+        <h2>What with exported files</h2>
+        
+        <p>
+            You can use them on your webpage: 
+            <span class="code">&lt;script src="js/output.js"&gt;
+            &lt;/script&gt;</span>.
+        </p>
+        <p>
+            Browserify accepts also imports of our ES6 files in ES6 
+            format. Those have to be exported as a ES6 module.
+        </p>
+
+    </div>
+
+    <div id="package-json" 
+         class="step" data-x="1000" data-y="4500" 
+         data-rotate="270" data-scale="3">
+        <h2>package.json</h2>
+        
+        <p>
+            Browserify is a <span class="code">DevDependency</span> 
+            in a project.
+        <p>
+            In case we export project with Browserify and someone 
+            else reuse our code, then it's not necessary 
+            install all dependencies we used for development.
+        </p>
+        </p>
+        <p>
+            Those are already included in our exported file. :-)
+        </p>
+
+    </div>
+
+    <div id="automation" 
+         class="step" data-x="3000" data-y="3500" 
+         data-rotate="90" data-scale="1">
+        <h2>Automation with package.json</h2>
+        
+        <p>
+            It's handy to define scripts in 
+            <span class="code">package.json</span>:
+
+<pre class="code"  style="display: block; width: 1000px">
+"scripts": {
+    "build-js": "browserify js/main.js &gt;
+     js/findem.js",
+    "watch-js": "watchify js/main.js -o
+     js/findem.js"
+    }
+</pre>
+        </p>
+        <p>
+            Then just run npm command: 
+            <span class="code">npm run build-js</span> or 
+            <span class="code">npm run watch-js</span>.
+        </p>
+        <p>
+            <span class="code">DevDependency</span>
+            <span class="code">Watchify</span> re-run Browserify each
+            time, when exported JS file changes.
+        </p>
+
+    </div>
+
+    <div id="generating-source-maps" 
+         class="step" data-x="-2000" data-y="5500" 
+         data-rotate-x="-270" data-scale="2">
+        <h2>Generating source maps in npm</h2>
+        
+        <p>
+            We can set commands to 
+            <span class="code">package.json</span> 
+            to generate source maps with Browserify and Watchify.
+<pre class="code" style="display: block; width: 1000px">
+"scripts": {
+    "build-js": "browserify js/main.js &gt; 
+        js/findem.js -d",
+    "watch-js": "watchify js/main.js -o 
+        js/findem.js -d"
+}</pre>
+        </p>
+
+        <p> or just combine them:
+            <span class="code">
+                "watch-js": "watchify js/main.js -o js/findem.js -dv"
+            </span>
+        </p>
+
+    </div>
+
+    <div id="grunt" class="step" 
+         data-x="3000" data-y="2500" 
+         data-rotate-x="-270" data-rotate-y="-270" data-scale="1">
+        <h2>Grunt</h2>
+        
+        <p>
+            Together with Browserify we can automate tasks by 
+            using <span class="code">Grunt</span>. Grunt requires 
+            install 3 separate dependencies and set up a 
+            <span class="code">GruntFile.js</span>, where we 
+            define our tasks to run.
+        </p>
+      
+        <div>
+            <img id="grunt_logo" src="assets/imgs/grunt-logo.png" />
+        </div>
+    </div>
+
+    <div id="gulp" class="step" data-x="0" data-y="2250" 
+         data-rotate-x="270" data-rotate-7="270" data-scale="3">
+        <h2>Gulp</h2>
+        
+        <p>
+            Thanks to Browserify streaming API we can also use 
+            <span class="code">Gulp</span>, which is aside of Grunt
+            other option.
+        </p>
+        <p>
+            Gulp requires 
+            install 2 separate dependencies and set up a 
+            <span class="code">GulpFile.js</span>.
+        </p>
+      
+        <div>
+            <img id="gulp_logo" src="assets/imgs/gulp-logo.png" />
+        </div>
+    </div>
+
+    <div id="sources" class="step" data-x="5000" data-y="4000" 
+         data-rotate-x="-135" data-rotate-y="-135" data-scale="4">
+        <h2>sources</h2>
+
+        <ul>
+            <li><a href="http://browserify.org/" 
+                target="_blank">Browserify</a>,</li>
+            <li><a href="https://gruntjs.com/" 
+                target="_blank">Grunt.js - JS task runner</a>,</li>
+            <li><a href="https://gulpjs.com/" 
+                target="_blank">Gulp.js - streaming build system</a>,</li>
+            <li><a href="https://www.sitepoint.com/getting-started-browserify/"
+                target="_blank">Sitepoint article</a>,</li>
+            <!-- <li><a href="" target="_blank"></a>,</li> -->
+        </ul>
+
+    </div>
+
+    <div id="overview" class="step slide" data-x="3000" 
+      data-y="1500" data-z="0" data-scale="10">
+    </div>
+
+</div>
+
+<div id="impress-toolbar"></div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate. <br/>
+    Press 'P' to launch speaker console.</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Swipe left or right to navigate</p>";
+}
+</script>
+
+<script src="assets/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
+
+
+
+<!--EZEBUIRO UCHECHUKWU VINCENT-->
